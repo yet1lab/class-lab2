@@ -6,10 +6,12 @@ package dados;
 
 import dados.IRepoCarros;
 import java.util.ArrayList;
+import negocio.Carro;
+import negocio.PesquisaCarros;
 
-public class RepoCarros extends PesquisaCarros implements IRepoCarros {
+public class RepoCarro extends PesquisaCarros implements IRepoCarros {
 
-    public RepoCarros(Carro[] carros) {
+    public RepoCarro(Carro[] carros) {
         super(carros);
     }
 

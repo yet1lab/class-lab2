@@ -29,6 +29,7 @@ public class ManutencaoPreventiva extends Manutencao{
     
     public void alterarProximaData() {
         Scanner my = new Scanner(System.in);
-        this.Carro.setData(my.nextLine());
+        /*this.Carro.setData(my.nextLine());*/
+        this.proximaData = my.nextLine();
     }
 }

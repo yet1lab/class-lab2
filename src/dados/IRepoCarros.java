@@ -9,6 +9,8 @@ package dados;
  * @author vini
  */
 
+import negocio.Carro;
+
  public interface IRepoCarros {
     boolean haveCarro(String placa);
     void delCarro(String placa);
