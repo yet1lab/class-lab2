@@ -8,12 +8,11 @@ package dados;
  *
  * @author vini
  */
+
 public interface ICarro {
-    
-    void alugarCarro();
-
-    void agendarManutencao();
-
-    void verificarCarro();
-
+    void setValor(int valor);
+    void setDados(String marca, String modelo, int ano, String placa);
+    void setDisponivel();
+    void setIndisponivel();
+    void setEstado(String estado);
 }

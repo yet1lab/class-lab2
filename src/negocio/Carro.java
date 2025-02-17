@@ -4,84 +4,85 @@
  */
 package negocio;
 
+import dados.ICarro;
+
 /**
  *
  * @author vini
  */
 
-public class Carro{
+ public class Carro implements ICarro {
+    private int ano;
+    private String placa;
+    private String marca;
+    private String modelo;
+    private int valor;
+    private String estado;
+    private boolean disponivel;
 
-    String placa; //Placa do carro que servirá como ID
-    String marca; //Marca do carro "Toyota", "Fiat"...
-    String modelo; //Modelo do carro "Corolla", "Uno"...
-    double precoDiaria; //Valor do custo da Diaria de aluguel
-    boolean disponibilidade; // Se o carro está ou não disponível para aluguel
-    String dataManutencaoPreventiva; // A data da manutenção preventiva
-    String status; // Status é o estado atual do veículo: Disponível/Manutenção/Em uso
-    //Cliente nomeDoCliente;
-
-    public Carro(){
-
+    public Carro(String marca, String modelo, int ano, String placa) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.placa = placa;
+        this.disponivel = false;
+        this.estado = "novo";
     }
 
-    //INICIO GETTERS E SETTER
+    @Override
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public void setDados(String marca, String modelo, int ano, String placa) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.placa = placa;
+    }
+
+    @Override
+    public void setDisponivel() {
+        this.disponivel = true;
+    }
+
+    @Override
+    public void setIndisponivel() {
+        this.disponivel = false;
+    }
+
+    @Override
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
     public String getPlaca() {
         return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public String getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public int getValor() {
+        return valor;
     }
 
-    public double getPrecoDiaria() {
-        return precoDiaria;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setPrecoDiaria(double precoDiaria) {
-        this.precoDiaria = precoDiaria;
+    public boolean isDisponivel() {
+        return disponivel;
     }
-
-    public boolean isDisponibilidade() {
-        return disponibilidade;
-    }
-
-    public void setDisponibilidade(boolean disponibilidade) {
-        this.disponibilidade = disponibilidade;
-    }
-
-    public String getDataManutencaoPreventiva() {
-        return dataManutencaoPreventiva;
-    }
-
-    public void setDataManutencaoPreventiva(String dataManutencaoPreventiva) {
-        this.dataManutencaoPreventiva = dataManutencaoPreventiva;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    //FIM GETTERS E SETTERS
-
-
-    
 }
+
