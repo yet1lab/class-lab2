@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package negocio;
-
-/**
- *
- * @author vini
- */
-public class ManutencaoCorretiva extends Manutencao {
-    
+//==========================================
+	package negocio;
+//==========================================
+public class ManutencaoCorretiva extends Manutencao {    
     Carro carro; // O carro que foi para manutenção
     int nivelDeDano; // A peça que foi consertada
     double valorDoConserto; // Valor total do conserto
-    
-    
+
     public void ManuntencaoCorretiva(Carro carro, int nivelDeDano){
         this.Carro = carro;
         this.nivelDeDano = nivelDeDano;

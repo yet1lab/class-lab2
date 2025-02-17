@@ -1,2 +1,22 @@
-/nbproject/private/
-/build/
+# Binários compilados (não devem ser versionados)
+**/build/
+**/dist/
+**/nbproject/private/
+**/*.class
+
+# Logs e caches do NetBeans
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+**/nbproject/Configurations.xml
+**/.nbattrs
+
+# Dependências baixadas (caso use Maven ou Gradle)
+**/target/
+**/.m2/
+**/.gradle/
+**/.cache/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+

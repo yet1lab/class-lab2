@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package negocio;
-
-/**
- *
- * @author Vinícius Marques
- */
-
+//==========================================
+	package negocio;
+//==========================================
 public abstract class PesquisaCarros {
     protected Carro[] carros;
     protected Carro[] pesquisa;
