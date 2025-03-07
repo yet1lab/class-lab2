@@ -10,9 +10,10 @@ public class Carro implements ICarro {
     public String modelo;
     public String estado;
     public boolean disponivel;
+    public int nivelDeDano = 0;
 
 // PRINCIPAIS SETS
-		public void setValor(int valor){ this.valor = valor; }
+    public void setValor(int valor){ this.valor = valor; }
     public void setDados(String marca, String modelo, int ano) {
         this.marca = marca;
         this.modelo = modelo;
@@ -36,6 +37,9 @@ public class Carro implements ICarro {
     public void setEstado(String estado){ this.estado = estado; }
 
     public void alugaCarro(){ this.setIndisponivel(); this.setEstado("Alugado"); }
-    public void devolveCarro(){ this.setDisponivel(); this.setEstado("Disponivel"); }
+    public void devolveCarro(){ 
+        this.setDisponivel(); 
+        this.setEstado(estado);
+        ManutencaoCorretiva manutencao = new ManutencaoCorretiva();
+    }
 }
-
