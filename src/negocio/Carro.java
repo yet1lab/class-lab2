@@ -37,9 +37,8 @@ public class Carro implements ICarro {
     public void setEstado(String estado){ this.estado = estado; }
 
     public void alugaCarro(){ this.setIndisponivel(); this.setEstado("Alugado"); }
-    public void devolveCarro(){ 
-        this.setDisponivel(); 
+    public void devolveCarro(){
+        this.setDisponivel();
         this.setEstado(estado);
-        ManutencaoCorretiva manutencao = new ManutencaoCorretiva();
     }
 }
