@@ -1,22 +1,35 @@
 //==========================================
 	package negocio;
+	import negocio.my;
+	import negocio.Carro;
+	import java.util.ArrayList;
 //==========================================
 public abstract class PesquisaCarros {
-    protected Carro[] carros;
-    protected Carro[] pesquisa;
+	protected ArrayList<Carro> carros;
+	protected ArrayList<Carro> pesquisa;
 
-    public PesquisaCarros(Carro[] carros) {
-        this.carros = carros;
-        this.pesquisa = new Carro[0];
-    }
+	public ArrayList<Carro> getPesquisa() {
+		ArrayList<Carro> temp = this.pesquisa; 
+		this.pesquisa = this.carros; 
+		return temp;
+	}
 
-    public Carro[] getPesquisa() {
-        return pesquisa;
-    }
+	public boolean haveCarro(String placa) {
+		return this.carros.stream().anyMatch(x -> x.placa.equals(placa));
+	}
 
-    public abstract void getAno(int ano);
+	public void getAno(int ano){
+		pesquisa = my.filter(this.pesquisa, x -> x.ano, ano);
+	}
+
+// my.find()
+// my.get(array, "prop1 prop2")
+// my.set(array, "prop1 prop2")
+
+/*
     public abstract void getPlaca(String placa);
     public abstract void getMarca(String marca);
     public abstract void getModelo(String modelo);
     public abstract void getEstado(String status);
+*/
 }

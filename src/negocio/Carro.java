@@ -12,6 +12,10 @@ public class Carro implements ICarro {
     public boolean disponivel;
     public int nivelDeDano = 0;
 
+// PRINCIPAIS GETS
+	public int getAno(){ return this.ano; }
+	public String getPlaca(){ return this.placa; }
+
 // PRINCIPAIS SETS
     public void setValor(int valor){ this.valor = valor; }
     public void setDados(String marca, String modelo, int ano) {

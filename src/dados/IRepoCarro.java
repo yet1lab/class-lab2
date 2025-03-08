@@ -1,6 +1,7 @@
 //==========================================
 	package dados;
 	import negocio.Carro;
+	import java.util.ArrayList;
 //==========================================
 public interface IRepoCarro {
   Carro getCarro(String placa);
@@ -8,6 +9,6 @@ public interface IRepoCarro {
   void addCarro(String placa, String marca, String modelo, int ano);  
 	boolean haveCarro(String placa);
   
-  Carro[] getFrota();  
 	int getContagem();
+  ArrayList<Carro> getFrota();  
 }

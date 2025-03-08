@@ -1,58 +1,35 @@
 //==========================================
 	package dados;
-	import java.util.ArrayList;
+	import negocio.my;
 	import negocio.Carro;
 	import dados.IRepoCarro;
+	import java.util.ArrayList;
 	import negocio.PesquisaCarros;
 //==========================================
 public class RepoCarro extends PesquisaCarros implements IRepoCarro {
-    public RepoCarro(Carro[] carros) {
-        super(carros);
-    }
+	public ArrayList<Carro> getFrota() { return this.carros; }
+	public int getContagem() { return this.carros.size(); }
 
-    public boolean haveCarro(String placa) {
-        for (Carro carro : carros) {
-            if (carro.placa.equals(placa)) {
-                return true;
-            }
-        }
-        return false;
-    }
+	public void delCarro(String placa) {
+		Carro carro = this.getCarro(placa);
+		this.carros.remove(carro);
+	}
 
-    public void delCarro(String placa) {
-        ArrayList<Carro> carrosList = new ArrayList<>();
-        for (Carro carro : carros) {
-            if (!carro.placa.equals(placa)) {
-                carrosList.add(carro);
-            }
-        }
-        carros = carrosList.toArray(new Carro[0]);
-    }
+	public Carro getCarro(String placa) {
+		for (Carro carro : carros) {
+			if (carro.placa.equals(placa)) { return carro; }
+		}
+		return null;
+	}
 
-    public void addCarro(String placa, String marca, String modelo, int ano) {
-        if (!haveCarro(placa)) {
-            Carro novoCarro = new Carro(marca, modelo, ano, placa);
-            ArrayList<Carro> carrosList = new ArrayList<>();
-            for (Carro carro : carros) {
-                carrosList.add(carro);
-            }
-            carrosList.add(novoCarro);
-            carros = carrosList.toArray(new Carro[0]);
-        }
-    }
+	public void addCarro(String placa, String marca, String modelo, int ano) {
+		if (!haveCarro(placa)) {
+			carros.add(new Carro(marca, modelo, ano, placa));
+		}
+	}
 
-    public Carro getCarro(String placa) {
-        for (Carro carro : carros) {
-            if (carro.placa.equals(placa)) {
-                return carro;
-            }
-        }
-        return null;
-    }
 
-    public Carro[] getFrota() { return carros; }
-    public int getContagem() { return carros.length; }
-
+/*
     public void getAno(int ano) {
         ArrayList<Carro> resultado = new ArrayList<>();
         for (Carro carro : carros) {
@@ -92,7 +69,7 @@ public class RepoCarro extends PesquisaCarros implements IRepoCarro {
         }
         pesquisa = resultado.toArray(new Carro[0]);
     }
-
+ 
     public void getEstado(String status) {
         ArrayList<Carro> resultado = new ArrayList<>();
         for (Carro carro : carros) {
@@ -102,4 +79,5 @@ public class RepoCarro extends PesquisaCarros implements IRepoCarro {
         }
         pesquisa = resultado.toArray(new Carro[0]);
     }
+*/
 }
