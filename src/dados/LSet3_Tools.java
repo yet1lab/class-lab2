@@ -2,6 +2,7 @@
 //               LSETMAP LEVEL 3 - TOOLS
 //========================================================
 package dados;
+import negocio.LBox;
 
 import java.util.Set;
 import java.util.stream.Stream;

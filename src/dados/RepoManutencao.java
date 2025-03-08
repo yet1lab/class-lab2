@@ -1,36 +1,16 @@
 //==========================================
-	package dados;
-	import java.util.ArrayList;
-	import negocio.Manutencao;
+//       REPOSITORIO DE MANUTENCAO
 //==========================================
-public class RepoManutencao {    
+package dados;
+import negocio.Manutencao;
+//==========================================
+public class RepoManutencao extends LSetMap<Manutencao> {
+	private static RepoManutencao instance;
 
-    public static ArrayList<Manutencao> ManutencoesFeitas = new ArrayList<>();
+	private RepoManutencao() { super(Manutencao.class); }
 
-    // Método para adicionar uma manutenção à lista
-    public static void addManutencao(Manutencao manutencao) {
-        ManutencoesFeitas.add(manutencao);
-    }
-
-    // Método para buscar uma manutenção pelo ID
-    public static Manutencao getManutencao(int id) {
-        for (Manutencao manutencao : ManutencoesFeitas) {
-            if (manutencao.getIdManutencao() == id) {
-                return manutencao;
-            }
-        }
-        return null; // Retorna null se não encontrar a manutenção
-    }
-
-    // Método para remover uma manutenção pelo ID
-    public static void delManutencao(int id) {
-        ManutencoesFeitas.removeIf(manutencao -> (manutencao.getIdManutencao() == id));
-    }
-
-    // Método para listar todas as manutenções
-    public static void listarManutencoes() {
-        for (Manutencao manutencao : ManutencoesFeitas) {
-            System.out.println(manutencao);
-        }
-    }
+	public static RepoManutencao getInstance(){
+		if (instance == null){ instance = new RepoManutencao(); }
+		return instance;
+	};
 }

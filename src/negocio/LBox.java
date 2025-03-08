@@ -1,9 +1,11 @@
 //========================================================
 //            LBOX - BASE FOR INTERNAL ELEMENTS
 //========================================================
-package dados;
+package negocio;
 
-import negocio.Safe;
+import dados.LSetMap;
+import dados.LSetBook;
+
 import java.util.Arrays;
 import java.lang.reflect.Field;
 //========================================================

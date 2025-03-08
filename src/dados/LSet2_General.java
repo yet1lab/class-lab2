@@ -3,6 +3,7 @@
 //========================================================
 package dados;
 
+import negocio.LBox; 
 import negocio.Safe; 
 import java.util.Set; 
 import java.util.HashSet; 

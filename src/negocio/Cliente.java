@@ -1,19 +1,19 @@
 //==========================================
-	package negocio;
+//            CLASSE CLIENTE           
 //==========================================
-public class Cliente {    
-    public String cpf;
-    public String nome;
+package negocio;
+
+public class Cliente extends LBox<Cliente>{    
+	private String cpf;
+	private String nome;
 
 // CONSTRUTOR DA CLASSE
-    public Cliente (String cpf, String nome){
-        this.cpf = cpf;
-        this.nome = nome;
-    }
+	public Cliente (String cpf, String nome){
+		this.cpf = cpf;
+		this.nome = nome;
 
-// SET GERAL DA CLASSE
-    public void setDados(String cpf, String nome){
-        this.nome = nome;
-        this.cpf = cpf;
-    }
+		this.setters = "nome";
+		this.getters = "cpf nome";
+		this.props = "cpf nome";
+	}
 }

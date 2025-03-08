@@ -1,30 +1,16 @@
 //==========================================
-	package dados;
-	import java.util.*;
-	import negocio.Cliente;
+//        REPOSITORIO DE CLIENTES
 //==========================================
-public class RepoCliente {    
-        public static ArrayList<Cliente> clientes;
-        
-        public static Cliente getCliente(String cpf){
-            for(Cliente cliente : clientes){
-                if (cliente.cpf == cpf){
-                    return cliente;
-                }
-            }
-            return null;
-        }
-        
-        public static void delCliente(String cpf){
-            for(Cliente cliente : clientes){
-                if (cliente.cpf == cpf){
-                    clientes.remove(cliente);
-                }
-            }
-        }
-        
-        public static void addCliente(String cpf, String nome){
-            Cliente cliente = new Cliente(cpf,nome);
-            clientes.add(cliente);
-        }
+package dados;
+import negocio.Cliente;
+//==========================================
+public class RepoCliente extends LSetMap<Cliente> {
+	private static RepoCliente instance;
+
+	private RepoCliente() { super(Cliente.class); }
+
+	public static RepoCliente getInstance(){
+		if (instance == null){ instance = new RepoCliente(); }
+		return instance;
+	};	
 }

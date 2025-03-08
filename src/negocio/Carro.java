@@ -1,48 +1,44 @@
 //==========================================
-	package negocio;
-	import dados.ICarro;
+//            CLASSE CARRO
 //==========================================
-public class Carro implements ICarro {
-    public int ano;
-    public int valor;
-    public String placa;
-    public String marca;
-    public String modelo;
-    public String estado;
-    public boolean disponivel;
-    public int nivelDeDano = 0;
+package negocio;
 
-// PRINCIPAIS GETS
-	public int getAno(){ return this.ano; }
-	public String getPlaca(){ return this.placa; }
-
-// PRINCIPAIS SETS
-    public void setValor(int valor){ this.valor = valor; }
-    public void setDados(String marca, String modelo, int ano) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.ano = ano;
-        this.placa = placa;
-    }
+public class Carro extends LBox<Carro> {
+	private int ano;
+	private int dano;
+	private int valor;
+	private String placa;
+	private String marca;
+	private String modelo;
+	private String estado;
+	private boolean disponivel;
 
 // CONSTRUTOR DA CLASSE
-    public Carro(String marca, String modelo, int ano, String placa) {
-        this.ano = ano;
-        this.placa = placa;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.disponivel = true;
-        this.estado = "Disponivel";
-    }
+	public Carro(String marca, String modelo, int ano, String placa) {
+		localSet("dano",0);
+		localSet("ano", ano);
+		localSet("placa", placa);
+		localSet("marca", marca);
+		localSet("modelo", modelo);
+		localSet("disponivel", true);
+		localSet("estado","disponivel");
 
+		this.getters = "ano placa marca modelo valor estado disponivel dano";
+		this.setters = "ano placa marca modelo valor estado disponivel dano";
+		this.props = "ano placa marca modelo valor estado disponivel dano";
+	}
+	
 // PROCESSOS DE ALUGUEL
-    public void setDisponivel(){ this.disponivel = true; }
-    public void setIndisponivel(){ this.disponivel = false; }
-    public void setEstado(String estado){ this.estado = estado; }
+	public String toString(){ return modelo+"/"+ano; }
+	public void setDisponivel(){ localSet("disponivel", true); }
+	public void setIndisponivel(){ localSet("disponivel", false); }
 
-    public void alugaCarro(){ this.setIndisponivel(); this.setEstado("Alugado"); }
-    public void devolveCarro(){
-        this.setDisponivel();
-        this.setEstado(estado);
-    }
+	public void alugaCarro(){ 
+		localSet("disponivel", false);
+		localSet("estado", "Alugado");
+	}
+	public void devolveCarro(String estado){
+		localSet("estado", estado);
+		localSet("disponivel", true);
+	}
 }
