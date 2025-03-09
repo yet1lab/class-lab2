@@ -20,7 +20,7 @@ public abstract class LBox<T> {
 	public static <T> void repo(LSetBook<T> repo){ reporef = repo; }
 
 	public <G> G get(String prop){
-		return (getters.contains(prop)) ? localGet(prop) : null;
+		return (getters.contains(prop)) ? ((G) localGet(prop)) : null;
 	}
 	public <G> void set(String prop, G val){
 		if (setters.contains(prop)) { localSet(prop, val); } 

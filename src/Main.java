@@ -2,10 +2,15 @@
 	import dados.RepoCarro;
 	import negocio.*;
 	import java.util.Set;
+        import negocio.Fachada;
+        import gui.menu.MenuOption;
 //==========================================
 public class Main {
 	public static void main(String[] args) {
-		RepoCarro carros = RepoCarro.getInstance(); 
+                Fachada fachada = new Fachada();
+                MenuOption tela = new MenuOption();
+		RepoCarro carros = fachada.get("carros");
+                
 
 		carros
 			.add("lamborguini", "huracan", 2024, "AAA-0002")
@@ -19,5 +24,11 @@ public class Main {
 		Carro carro             = carros.obj("placa","AAA-0000"); 
 
 		my.print("%s ; %s ; %s ; %s %n", tamanho, conjuntoAll, conjunto, carro);
+                
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MenuOption().setVisible(true);
+            }
+        });
 	}
 }

@@ -9,7 +9,7 @@ public class Aluguel extends LBox<Aluguel>{
 	double valor;
 	Cliente cliente;
 
-	Aluguel(Cliente cliente, Carro carro, int dias){
+	public Aluguel(Cliente cliente, Carro carro, int dias){
 		localSet("dias", dias);
 		localSet("carro", carro);
 		localSet("cliente", cliente);

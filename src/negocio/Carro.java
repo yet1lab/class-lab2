@@ -29,7 +29,7 @@ public class Carro extends LBox<Carro> {
 	}
 	
 // PROCESSOS DE ALUGUEL
-	public String toString(){ return modelo+"/"+ano; }
+	public String toString(){ return marca+"/"+modelo+"/"+ano+"/"+placa+"/"+estado; }
 	public void setDisponivel(){ localSet("disponivel", true); }
 	public void setIndisponivel(){ localSet("disponivel", false); }
 
