@@ -11,11 +11,16 @@ import java.util.function.BinaryOperator;
 //========================================================
 @SuppressWarnings("unchecked")
 public interface LSetBook<T> {
-	T               obj(int... pag);         // get object of book[pag]
-	Set<T>          get(int... pag);         // get the set book[pag]
-	LSetBook<T>     del(int... pag);         // delete book[pag] in all
-	LSetBook<T>     add(Object... args);     // add object in all
-	<G> LSetBook<T> set(String prop, G val); // delete book[pag] in all
+	T                obj(int... pag);         // get object of book[pag]
+	Set<T>           get(int... pag);         // get the set book[pag]
+	LSetBook<T>      del(int... pag);         // delete book[pag] in all
+	LSetBook<T>      add(Object... args);     // add object in all
+	<G> LSetBook<T>  set(String prop, G val); // delete book[pag] in all
+
+	<G> Set<T>       src();                   // get object with prop=val
+	<G> T            obj(String prop, G val); // get object with prop=val
+	<G> Set<T>       get(String prop, G val); // get set with prop=val
+	<G> LSetBook<T>  del(String prop, G val); // delete set with prop=val
 
 	LSetBook<T> New(int n);       // add n void sets
 	LSetBook<T> rip(int n);       // book.pop(pag)

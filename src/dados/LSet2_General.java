@@ -29,6 +29,11 @@ public abstract class LSet2_General<T> extends LSet1_Support<T> {
 		} return (LSetBook<T>) this;
 	}
 //========================================================
+	public <G> Set<T>       src(){                   return this.src; }
+	public <G> T            obj(String prop, G val){ return ((LSetMap<T>) this).pin(prop,val).obj(0); }
+	public <G> Set<T>       get(String prop, G val){ return ((LSetMap<T>) this).pin(prop,val).get(0); }
+	public <G> LSetBook<T>  del(String prop, G val){ return ((LSetMap<T>) this).pin(prop,val).del(0); }
+//========================================================
 	public <G> LSetBook<T> set(String prop, G val){
 		for (T obj: book.get(0)) { ((LBox<T>) obj).set(prop, val); }
 		return (LSetBook<T>) this;
