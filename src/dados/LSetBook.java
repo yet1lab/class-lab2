@@ -55,37 +55,3 @@ public interface LSetBook<T> {
 	<G> LSetBook<T> esc(String prop, G val); // cur = ~(filter - cur) << ndif
 }
 
-/*
-public class lsetbook {
-	public static void main(String[] args){
-		LSetBook<Carro> carros = new LSetMap<>(Carro.class);
-		carros
-			.add("uno", 2000)
-			.add("celta", 2000)
-			.add("corolla", 2012)
-			.add("ferrari", 2012);
-	
-		carros.New(3)
-			.pin("ano", 2000);
-		
-		carros.forEach(System.out::println);
-	}
-}
-//========================================================
-public class Carro extends LBox<Carro>{
-	int ano;
-	String nome;
-
-	public Carro(String nome, int ano){
-		props = "nome ano";
-		getters = "modelo ano";
-		setters = "modelo ano";
-
-		localSet("ano", ano);
-		localSet("nome", nome);
-	}
-
-	public String toString(){ return this.nome; }
-}
-*/
-

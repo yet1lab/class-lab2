@@ -3,7 +3,9 @@
 //==========================================
 package negocio;
 
-public class Carro extends LBox<Carro> {
+import java.io.Serializable;
+
+public class Carro extends LBox<Carro> implements Serializable{
 	private int ano;
 	private int dano;
 	private int valor;
@@ -12,6 +14,7 @@ public class Carro extends LBox<Carro> {
 	private String modelo;
 	private String estado;
 	private boolean disponivel;
+        private static final long serialVersionUID = 1L;
 
 // CONSTRUTOR DA CLASSE
 	public Carro(String marca, String modelo, int ano, String placa) {
@@ -21,7 +24,7 @@ public class Carro extends LBox<Carro> {
 		localSet("marca", marca);
 		localSet("modelo", modelo);
 		localSet("disponivel", true);
-		localSet("estado","disponivel");
+		localSet("estado","Disponivel");
 
 		this.getters = "ano placa marca modelo valor estado disponivel dano";
 		this.setters = "ano placa marca modelo valor estado disponivel dano";
@@ -41,4 +44,8 @@ public class Carro extends LBox<Carro> {
 		localSet("estado", estado);
 		localSet("disponivel", true);
 	}
+        public void emManutencao(){
+                localSet("estado", "Em Manutenção");
+                localSet("disponivel", false);
+        }
 }

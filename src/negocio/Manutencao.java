@@ -3,26 +3,26 @@
 //========================================================
 package negocio;
 
-public class Manutencao extends LBox<Manutencao>{    
+import java.io.Serializable;
+
+public class Manutencao extends LBox<Manutencao> implements Serializable{    
 	Carro carro;            // O carro que foi para manutenção
 	double valor;           // Valor total do conserto
-	static int nextId = 1; 
-
-	public void Manuntencao(Carro carro, int nivelDeDano){
+        private static final long serialVersionUID = 1L;
+        
+	public Manutencao(Carro carro, int nivelDeDano){
 		localSet("carro", carro);
 		carro.set("nivelDeDano", 0);
-		
+                carro.emManutencao();
 		localSet("valor", gerarMulta(nivelDeDano));
-		localSet("id", nextId++);
 
-		this.getters = "carro valor id nextId";
-		this.setters = "carro valor id nextId";
-		this.props = "carro valor id nextId";
+		this.getters = "carro valor";
+		this.setters = "carro valor";
+		this.props = "carro valor";
+                
 	}
 
-	public String ToString(){
-		return "O cliente está devendo: "+ valor;
-	}
+	public String toString(){ return carro +"/"+valor; }
 
 	public double gerarMulta(int nivel) {
 		return switch (nivel) {

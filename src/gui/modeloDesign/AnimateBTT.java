@@ -24,21 +24,31 @@ public class AnimateBTT {
         lblx.setIcon (new ImageIcon(getClass().getResource(url)));
     }
     
+    public void animarAluguel(){
+        mostrarCor(MenuOption.btt_alugar, MenuOption.btt_alugar, MenuOption.lbl_alugar, "/icones/db32px.png");
+        estabelecCor(MenuOption.btt_manutencao, MenuOption.btt_manutencao, MenuOption.lbl_manuntencao, "/icones/rep32px.png");
+        estabelecCor(MenuOption.btt_clientes, MenuOption.btt_clientes, MenuOption.lbl_clientes, "/icones/cliente32px.png");
+        estabelecCor(MenuOption.btt_frota, MenuOption.btt_frota, MenuOption.lbl_frota, "/icones/carro32px.png");
+    }
+    
     public void AnimarFrota(){
         mostrarCor(MenuOption.btt_frota, MenuOption.btt_frota, MenuOption.lbl_frota, "/icones/carro32px.png");
         estabelecCor(MenuOption.btt_manutencao, MenuOption.btt_manutencao, MenuOption.lbl_manuntencao, "/icones/rep32px.png");
         estabelecCor(MenuOption.btt_clientes, MenuOption.btt_clientes, MenuOption.lbl_clientes, "/icones/cliente32px.png");
+        estabelecCor(MenuOption.btt_alugar, MenuOption.btt_alugar, MenuOption.lbl_alugar, "/icones/db32px.png");
     }
     
     public void AnimarManuntencao(){
         mostrarCor(MenuOption.btt_manutencao, MenuOption.btt_manutencao, MenuOption.lbl_manuntencao, "/icones/rep32px.png");
         estabelecCor(MenuOption.btt_frota, MenuOption.btt_frota, MenuOption.lbl_frota, "/icones/carro32px.png");
         estabelecCor(MenuOption.btt_clientes, MenuOption.btt_clientes, MenuOption.lbl_clientes, "/icones/cliente32px.png");
+        estabelecCor(MenuOption.btt_alugar, MenuOption.btt_alugar, MenuOption.lbl_alugar, "/icones/db32px.png");
     }
     
     public void AnimarClientes(){
         mostrarCor(MenuOption.btt_clientes, MenuOption.btt_clientes, MenuOption.lbl_clientes, "/icones/cliente32px.png");
         estabelecCor(MenuOption.btt_manutencao, MenuOption.btt_manutencao, MenuOption.lbl_manuntencao, "/icones/rep32px.png");
         estabelecCor(MenuOption.btt_frota, MenuOption.btt_frota, MenuOption.lbl_frota, "/icones/carro32px.png");
+        estabelecCor(MenuOption.btt_alugar, MenuOption.btt_alugar, MenuOption.lbl_alugar, "/icones/db32px.png");
     }
 }
